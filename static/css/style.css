@@ -1,11 +1,11 @@
 :root {
   --bg: rgb(255,255,255);
   --fg: rgb(0,0,0);
-  --text-xlarge: 3rem;
-  --text-large: 2rem;
-  --text-medium: 1.4rem;
-  --text-normal: 1rem;
-  --text-small: 0.75rem;
+  --text-xlarge: 14px;
+  --text-large: 14px;
+  --text-medium: 14px;
+  --text-normal: 14px;
+  --text-small: 14px;
 }
 
 html {
@@ -382,10 +382,11 @@ h5 {
   margin-top: 0;
   margin-bottom: 15px;
   font-weight: bold;
+  font-size: 14px !important;
 }
 
 h1 {
-  font-weight: normal;
+ 
 }
 
 h1 a {
@@ -526,13 +527,7 @@ p {
 
 #header h1 {
   color: var(--bg);
-  font-size: calc(16px + 4vw);
   width: 100%;
-  text-align: center;
-}
-
-h1 {
-  text-align: center;
 }
 
 #header input {
@@ -614,7 +609,7 @@ h1 {
 }
 
 #index-head input {
-  font-size: calc(16px + 2vw);
+  font-size: 14px;
   width: 100% !important;
 }
 
@@ -624,7 +619,7 @@ h1 {
   outline: none;
   background: #f1f1f1;
   padding: 15px;
-  font-size: calc(16px + 4vw);
+  font-size: 14px;
 }
 
 hr {
@@ -726,16 +721,16 @@ figure img {
 */
 #single p.lead {
   font-family: arial, sans-serif;
-  font-size: var(--text-large);
+  font-size: 14px;
 }
 
 .text-mono {
   font-family: courier, monospace !important;
-  font-size: var(--text-small);
+  font-size: 14px;
 }
 
 .text-small {
-  font-size: var(--text-small);
+  font-size: 14px;
 }
 
 .pullquote {
@@ -752,10 +747,8 @@ figure img {
   position: fixed;
   top: 0;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1px;
-  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
 }
 #main #search-input {
   border: none;
@@ -779,7 +772,7 @@ nav a {
 }
 
 #main {
-  background: var(--bg);
+  background: transparent;
 }
 
 @media (max-width: 550px) {
@@ -787,7 +780,7 @@ nav a {
     display: none;
   }
   nav#main, nav#main input {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 #search-input {

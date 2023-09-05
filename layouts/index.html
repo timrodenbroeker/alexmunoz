@@ -1,35 +1,71 @@
 {{ define "main" }}
 
 <style>
-    #intro {
-        width: 100%;
-        height: 60vh;
-        justify-content: center;
-        align-items: center;
-        display: flex;   
-    }
 
-    #intro div {
-        transform: scale(3);}
+#projects {
+    width: 100%;
+    max-width: 1000px;
+    margin: 150px auto;
+}
+
+#intro-image {
+    width: 100%;
+    max-width: 1000px;
+    margin: 150px auto;
+}
+
+#intro {
+    padding: 15px;
+}
+
+video {
+    width: 100%;
+}
+
 </style>
-
 <section id="intro">
-    <div>
-    <a class="nav-pill" href="#section-clouds">Clouds</a><span style="padding: 0 10px;">→</span>
-    <a class="nav-pill" href="#section-drops">Drops</a><span style="padding: 0 10px;">→</span>
-    <a class="nav-pill" href="#section-plants" style="margin-right: 10px;">Plants</a>
-    </div>
+    <p>
+        <b>Alex Muñoz</b> Papaseit is an independent graphic and interaction designer from Barcelona, working worldwide, specialised in web design and digital brands. Currently working as freelance designer at Decimal, open to commissions and collaborations of any kind. Contact him by mail at alex@munozpapase.it. Check his CV, or follow him on Are.na or Instagram.
+    </p>
 </section>
 
+<section id="intro-image">
+    <img src="/images/alex.jpg">
+</section>
+    <section id="projects">
 
-    <section id="section-plants">
-    {{ partial "loop-plants.html" . }}
-    </section>
-    <section id="section-drops">
-    {{ partial "loop-drops.html" . }}
-    </section>
-    <section id="section-clouds">
-    {{ partial "loop-clouds.html" . }}
+      
+            
+                {{ $pages := .Site.RegularPages }} {{ $paginator := .Paginate ($pages) }}
+            
+                    <div id="index">
+            
+                  {{ range (where .Site.RegularPages "Type" "in" "projects") }}
+                 
+                  <div href="{{ .RelPermalink }}" class='post-item m-bot-10 {{ if .Draft }}is-draft{{ end }} {{ with .Params.archived }}is-archived{{ end }}' >
+                    {{ $title := .Title }} 
+                    {{ $summary := .Summary }} 
+                    {{ $image :=.Params.featured_image }} 
+                    {{ $video :=.Params.featured_video }}
+                    {{ $year :=.Params.year }} 
+                    <video poster="{{$image}}" src="{{$video}}" autoplay muted loop controls></video>
+        
+                    <div>
+                      <h2 class="title m-bot-0">
+                        {{ $title }}
+                      </h2>
+                      <p>{{ .Content }}</p>
+                      <p>{{ $year  }}</p>
+                       
+                   
+                </div>
+            </div>
+                    {{ end }}
+            
+            
+                  </div>
+   
+           
     </section>
 
 {{ end }}

@@ -2,19 +2,14 @@
 
 
 
-{{ $image :=
-  .Params.featured_image }}
+{{ $image := .Params.featured_image }}
 
   <main style="background: white;">
   <header>
-    <div class="wrap-wide" style="padding-top: 100px; margin-bottom: 2vw;">
-      <h1 style="line-height: 100%; font-size: calc(16px + 8vw); color: #000000;">
+    <div class="wrap" style="padding-top: 100px; margin-bottom: 2vw;">
+      <h1 style="line-height: 100%; color: #000000;">
         {{ .Title }}
       </h1>
-      <p class="text-mono p-top-15 text-center" datetime="{{ .PublishDate }}">{{ i18n "publishDate" . }}</p>
-      <div class="text-center">
-        {{ partial "tags.html" . }}
-      </div>
     </div>
   </header>
 
@@ -30,11 +25,7 @@
 </section>
 </main>
 
-<aside id="toc">
-  <div id="toc-list">
-    {{ .TableOfContents }}
-  </div>
-</aside>
+
 
 <script src='{{ "/js/medium-zoom.min.js" | relURL }}'></script>
 

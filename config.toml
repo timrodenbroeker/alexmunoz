@@ -1,6 +1,6 @@
-baseURL = 'https://garden.timrodenbroeker.de'
+baseURL = 'https://munozpapase.it'
 languageCode = 'en-us'
-title = 'garden.timrodenbroeker.de'
+title = 'Alex Munoz'
 buildDrafts = false
 paginate = 100
 summaryLength = 10
