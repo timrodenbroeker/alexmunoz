@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+<header>
+  <div class="wrap-wide" style="padding-top: 100px; margin-bottom: 2vw;">
+    <h1 style="line-height: 100%; font-size: calc(16px + 8vw); color: #551a8b;">
+      The Archive
+    </h1>
+    <p class="text-mono p-top-15 text-center" datetime="{{ .PublishDate }}">{{ i18n "publishDate" . }}</p>
+    <div class="text-center">
+      {{ partial "tags.html" . }}
+    </div>
+  </div>
+</header>
+
+<style>
+  .post-item:not(.is-archived) {
+      display: none;   
+  }
+</style>
+
+{{ partial "loop-plants-archive.html" . }}
+
+{{ partial "loop-drops-archive.html" . }}
+
+{{ end }}
+  

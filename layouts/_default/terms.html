@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+<div class="wrap m-top-100 m-bot-100">
+    <p class="text-large">
+      <b>Tags</b> sind Schlagwörter, die bestimmte Bereiche verknüpfen, analog zu Tiago Forte's Arealen. 
+    </p>
+  </div>
+  
+
+<section id="tags" class="m-top-50 m-bot-50">
+      {{ $data := .Data }}
+      {{ range $key, $value := .Data.Terms.ByCount }}
+          {{ if ($value.Name) }}
+              
+                  <a class="tag" href="{{ "tags/" | relURL }}{{ $value.Name | urlize }}">
+                    {{ $value.Name }} <span>({{ $value.Count }})</span>
+                </a>
+              
+          {{ end }}
+      {{ end }}
+</section>
+{{ end }}

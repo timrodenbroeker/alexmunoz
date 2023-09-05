@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+<style>
+    #intro {
+        width: 100%;
+        height: 60vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;   
+    }
+
+    #intro div {
+        transform: scale(3);}
+</style>
+
+<section id="intro">
+    <div>
+    <a class="nav-pill" href="#section-clouds">Clouds</a><span style="padding: 0 10px;">→</span>
+    <a class="nav-pill" href="#section-drops">Drops</a><span style="padding: 0 10px;">→</span>
+    <a class="nav-pill" href="#section-plants" style="margin-right: 10px;">Plants</a>
+    </div>
+</section>
+
+
+    <section id="section-plants">
+    {{ partial "loop-plants.html" . }}
+    </section>
+    <section id="section-drops">
+    {{ partial "loop-drops.html" . }}
+    </section>
+    <section id="section-clouds">
+    {{ partial "loop-clouds.html" . }}
+    </section>
+
+{{ end }}
+  

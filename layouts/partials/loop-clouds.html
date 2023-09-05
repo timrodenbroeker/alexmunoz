@@ -1,0 +1,42 @@
+
+<style>
+    td {
+      padding: 5px !important;
+    }
+    td a {
+      text-decoration: none;
+    }
+    td input {
+      font-size: 13px;
+    }
+    tr:hover {
+      background: #f1f1f1;
+    }
+  </style>
+
+
+<div class="m-bot-100" style="width: 100%;max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+  
+<table>
+  
+{{ range (where .Site.RegularPages.ByTitle "Type" "in" "clouds") }}
+{{ $summary := .Summary }} {{ $image :=.Params.featured_image }} 
+<tr>
+<td>
+  <a href="{{ .RelPermalink }}">
+      {{ .Title }}
+  </a>
+</td>
+<td>
+    {{ .Params.Author }}
+</td>
+
+<td>
+<input style="border: 0; outline: none;" type="text" value="{{ .Params.Citation }}">  
+</td>
+</tr>
+{{ end }}
+
+</table>
+</div>
+
